@@ -8,7 +8,7 @@ var AdvancedMaths = require('./modules/advanced-maths');
 app.set('view engine' , 'ejs');
 //
 app.use(express.static('public'));
-
+// 
 app.get('/' , function(req , res){
   res.render("index");
 });
