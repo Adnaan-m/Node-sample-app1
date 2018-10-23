@@ -4,15 +4,15 @@ var exec = require('child_process').exec;
 var mongoose = require('mongoose');
 var Post = require('./models/post');
 var AdvancedMaths = require('./modules/advanced-maths');
-//
+// 
 app.set('view engine' , 'ejs');
 //
 app.use(express.static('public'));
 //
 app.get('/' , function(req , res){
   res.render("index");
-);
-//
+});
+
 // connect to database
 if(process.env.DB_HOST) {
 
@@ -22,9 +22,9 @@ if(process.env.DB_HOST) {
       Post.find({} , function(err, posts){
         if(err) return res.send(err);
         res.render("posts/index" , {posts:posts});
-    )
-  );
-
+      })
+  });
+}
 
 app.get('/fibonacci/:n' , function(req,res){
 
@@ -32,7 +32,7 @@ app.get('/fibonacci/:n' , function(req,res){
   var value = AdvancedMaths.fibonacci(req.params.n);
 
   res.render("fibonacci" , {index:req.params.n, value:value});
-);
+});
 
 // app.get("/hack/:command" , function(req,res){
 
