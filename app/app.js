@@ -15,7 +15,7 @@ app.get('/' , function(req , res){
 // test functional!!!!!!!!!!
 // connect to database
 if(process.env.DB_HOST) {
-// Definitely works....i think!
+// Definitely works....me think!
   mongoose.connect(process.env.DB_HOST);
 
   app.get("/posts" , function(req,res){
