@@ -13,11 +13,11 @@ app.get('/' , function(req , res){
   res.render("index");
 });
 
-// 
+//
 if(process.env.DB_HOST) {
 
   mongoose.connect(process.env.DB_HOST);
-
+// 
   app.get("/posts" , function(req,res){
       Post.find({} , function(err, posts){
         if(err) return res.send(err);
