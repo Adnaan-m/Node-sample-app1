@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "app" do |app|
     app.vm.box = "ubuntu/xenial64"
     app.vm.network "private_network", ip: "192.168.10.100"
-    # app.hostsupdater.aliases = ["development.local"]
+    app.hostsupdater.aliases = ["development.local"]
 
     # Synced app folder
     app.vm.synced_folder "app", "/app"
@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "db" do |db|
     db.vm.box = "ubuntu/xenial64"
     db.vm.network "private_network", ip: "192.168.10.150"
-    # db.hostsupdater.aliases = ["database.local"]
+    db.hostsupdater.aliases = ["database.local"]
 
     # provision with chef
     db.vm.provision "chef_solo" do |chef|
