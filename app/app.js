@@ -11,8 +11,9 @@ app.use(express.static('public'));
 //
 app.get('/' , function(req , res){
   res.render("index");
-
-// This doesnt
+});
+// test functional!!!!!!!!!!
+// connect to database
 if(process.env.DB_HOST) {
 // Definitely works....me think!
   mongoose.connect(process.env.DB_HOST);
